@@ -6,31 +6,31 @@ import { useInView } from "react-intersection-observer";
 const sections = [
   {
     messageText:
-      "Hé lô Kế Tường, trải qua mấy tháng bên nhau rồi ha, cũng hong quá ngắn cũng quá dài, anh với em cũng ở xa nữa, nên những lúc được ở cạnh em thật đáng trân trọng đối với anh.|||Em có nhớ những ngày đầu 2 đứa đi với nhau mà còn ngại chứ hả haha.|||Đây là những lần đầu của tụi mình nè em nhớ hong, những món quà đầu tiên của 2 đứa, bó hoa đầu tiên, buổi hoàng hôn đầu tiên,...|||Anh làm cái này để em có thể cùng anh nhìn nhận lại từ đầu đến giờ, và cùng nhau ngắm nhìn những tấm hình vui vẻ này nhé.|||Em vuốt xuống nha cục dàng",
+      "Text", //Chèn text vào ngoặc nhé
     textPosition: "top-[280px] left-[1225px]",
     textColor: "text-black",
   },
   {
     messageText:
-      "Đây là chuyến du lịch xa cùng nhau lần đầu tiên đó bé nhớ hong.|||Anh dẫn em đi làm móng tới 10h tối nè, lúc đó anh chỉ ăn 1 ổ bánh mì và uống ly nước, ngồi chờ em để em có được bộ móng như ý đó.|||Nhờ chuyến đi chơi này mà em mới mở lòng hơn với anh nè, giờ nhắc lại anh thấy mắc cưới quá bé haha",
+      "Text", //Chèn text vào ngoặc nhé
     textPosition: "top-64 left-[1355px]",
     textColor: "text-black",
   },
   {
     messageText:
-      "Anh bắt đầu tặng quà cho em nhiều hơn, làm em bất ngờ nhiều hơn. Những lần em cười anh thấy hạnh phúc lắm, anh muốn em cười quài thôi á hí hí.|||Em biết anh mê em do nụ cười của em, nên em cười quài để gài anh chứ gì :v|||Trong lúc này thì anh với em đã có thêm định hướng chung mới, anh rất thích điều đó, anh muốn 2 đứa sẽ trở nên tốt hơn|||Và mình đã dần dần làm được rồi đó bae",
+      "Text", //Chèn text vào ngoặc nhé
     textPosition: "top-1/3 left-[225px]",
     textColor: "text-black",
   },
   {
     messageText:
-      "Anh vẫn nhớ câu nói mà anh đã nói với em rằng, em đẹp hơn hơn.|||Cái này anh nói thiệt đó chứ hong phải nói giỡn nịnh em đâu.|||Anh muốn tặng em thêm nhiều hoa nữa, đặc biệt là hoa Tulip, vì anh biết em thích hoa đó, anh sẽ cố gắng nhá.|||Mỗi lần em giận sẽ có 1 bó hoa, những cũng đừng vì thích hoa quá mà giận anh quài nhen, tội anh lắm đó haha",
+      "Text", //Chèn text vào ngoặc nhé
     textPosition: "top-[170px] left-[1310px]",
     textColor: "text-black",
   },
   {
     messageText:
-      "Dù có giận nhau đi chăng nữa thì em cũng đừng ghét bỏ hay bỏ anh mà đi nha|||Hai đứa cùng nhau cố gắng nhé|||Anh yêu Kế Tường nhất trên đời",
+      "Text", //Chèn text vào ngoặc nhé
     textPosition: "top-[180px] left-[1235px]",
     textColor: "text-black",
   },
@@ -117,7 +117,7 @@ export default function LoveTimeline({ setHideAllContent }) {
           >
             <video
               className="w-full h-full object-cover"
-              src="/VIDEO.mov"
+              src="/VIDEO.mov" //Video cuối ở đây
               controls
               autoPlay
               onEnded={() => setVideoEnded(true)}
@@ -180,7 +180,7 @@ function TimelineSection({ messageText, textPosition, sectionIndex, textColor })
     })), []);
 
   const renderImage = () => {
-    const imgSrc = `/PICS/HINH${sectionIndex + 1}.jpg`;
+    const imgSrc = `/PICS/HINH${sectionIndex + 1}.jpg`; // Chèn ảnh vào đây, nhớ đổi tên ảnh cho đúng nhé
     return (
       <motion.img
         src={imgSrc}
@@ -190,7 +190,7 @@ function TimelineSection({ messageText, textPosition, sectionIndex, textColor })
         animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         onAnimationComplete={() => {
-          setTimeout(() => setShowText(true), 2000);
+          setTimeout(() => setShowText(true), 2000); 
         }}
       />
     );
@@ -201,7 +201,7 @@ function TimelineSection({ messageText, textPosition, sectionIndex, textColor })
       ref={ref}
       className="snap-start h-screen relative flex justify-center items-center bg-pink-50 p-6 overflow-hidden"
     >
-      <div className="absolute inset-0 z-50 pointer-events-none">
+      <div className="absolute inset-0 z-50 pointer-events-none"> 
         {hearts.map((heart) => (
           <motion.div
             key={heart.id}
@@ -219,7 +219,7 @@ function TimelineSection({ messageText, textPosition, sectionIndex, textColor })
 
       {startTyping && (
         <motion.div
-          className={`absolute ${textPosition} z-20 text-lg font-semibold max-w-md leading-relaxed whitespace-pre-line bg-white/70 backdrop-blur-sm px-4 py-2 rounded-xl ${textColor}`}
+          className={`absolute ${textPosition} z-20 text-lg font-semibold max-w-md leading-relaxed whitespace-pre-line bg-white/70 backdrop-blur-sm px-4 py-2 rounded-xl ${textColor}`} // Hiển thị text
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -238,7 +238,7 @@ function TimelineSection({ messageText, textPosition, sectionIndex, textColor })
 
       {typingDone && (
         <motion.div
-          className="absolute bottom-6 text-pink-600 font-medium animate-bounce z-30"
+          className="absolute bottom-6 text-pink-600 font-medium animate-bounce z-30" // Hiển thị mũi tên
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}

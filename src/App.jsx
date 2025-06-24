@@ -23,7 +23,7 @@ export default function App() {
   // Chỉ tạo một bản audio duy nhất
   useEffect(() => {
     if (!window.__audioInstance__) {
-      const audio = new Audio("/love-song.mp3");
+      const audio = new Audio("/love-song.mp3"); // Đường dẫn đến file nhạc
       audio.volume = 0.7;
       window.__audioInstance__ = audio;
     }
@@ -69,7 +69,7 @@ export default function App() {
       className="z-20 text-center relative"
     >
       <h1 className="text-2xl md:text-3xl font-bold text-pink-700 mb-6 drop-shadow">
-        Kế Tường có yêu Xuân Phi không?
+        //để câu hỏi vào đây nhé
       </h1>
       <button
         onClick={() => setStep("choices")}
@@ -90,7 +90,7 @@ export default function App() {
       className="z-20 text-center relative"
     >
       <h1 className="text-2xl md:text-3xl font-bold text-pink-700 mb-6 drop-shadow">
-        Kế Tường có yêu Xuân Phi không?
+        //để câu hỏi vào đây nhé
       </h1>
       <div className="space-y-4">
         <button
